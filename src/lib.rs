@@ -7,13 +7,13 @@ use core::{
 #[cfg(feature = "std")]
 use std::alloc::Global;
 
-/// An arena allocator to be used with all types implementing the allocator API.
+/// An arena allocator to be used with types implementing the allocator API.
 /// The allocator is lazy and only pre-allocates a large chunk of memory once used.
 /// `Arena` grows by powers of two in size.
-/// When cleared `Arena` only keeps the last (and largest) chunk, deallocating the other chunks.
-/// The allocator deallocates only when `Arena` is dropped or the allocator is `clear`-ed
+/// When reset `Arena` only keeps the last (and largest) chunk, deallocating the other chunks.
+/// The allocator deallocates only when `Arena` is dropped or the allocator is `reset`.
 ///
-/// Safety: `Arena` can only be dropped or cleared when nothing is allocated on the Arena.
+/// Safety: `Arena` can only be dropped or reset when nothing is allocated on the Arena.
 pub struct Arena<
     #[cfg(not(feature = "std"))] A: Allocator,
     #[cfg(feature = "std")] A: Allocator = Global,
