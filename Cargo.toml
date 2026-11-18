@@ -1,0 +1,12 @@
+[package]
+name = "sanera"
+version = "0.1.0"
+edition = "2024"
+description = "Arena Allocators in Rust"
+license = "MIT"
+respository = "https://github.com/gozelski/sanera"
+readme = "README.md"
+keywords = ["arena", "allocator", "library"]
+categories = ["development-tools"]
+
+[dependencies]
