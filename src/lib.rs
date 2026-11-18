@@ -199,7 +199,7 @@ impl<A: Allocator> Drop for Arena<A> {
     }
 }
 
-/// Internal type. This not to be used as API.
+/// Internal type. This is not to be used as API.
 #[repr(C)]
 struct ChunkHeader {
     prev: Option<NonNull<ChunkHeader>>,
