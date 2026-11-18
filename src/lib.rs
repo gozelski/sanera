@@ -1,14 +1,6 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+///An arena allocator to be used with all types implementing the allocator API.
+/// The allocator pre-allocates a large chunk of memory at first, growing by page values.
+/// The allocator deallocates only when `Arena` is dropped.
+///
+/// Warning: It is not recommended to use `Arena` as the global allocator as it will essential act as a memory leak until the program exits.
+pub struct Arena {}
