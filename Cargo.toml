@@ -10,4 +10,8 @@ readme = "README.md"
 keywords = ["arena", "allocator", "library"]
 categories = ["development-tools"]
 
+[features]
+default = ["std"]
+std = []
+
 [dependencies]
