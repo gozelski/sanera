@@ -40,7 +40,7 @@ fn main() {
         //Deallocated as it is the only element in the arena
         // We could still call `arena.reset()` of course.
     }
-    //Arena is now fully cleaned up. (It deallocates everything on Drop)
+    //Arena is now fully cleaned up. (It deallocates its backing memory on Drop)
     // This can be allowed as all allocations need to borrow an `&Arena`.
     // Drop and `reset` only occur and are only available when no allocation is active.
 }
