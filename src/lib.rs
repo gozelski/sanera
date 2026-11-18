@@ -12,7 +12,7 @@ use std::alloc::Global;
 /// An arena allocator to be used with types implementing the allocator API.
 /// The allocator is lazy and only pre-allocates a large chunk of memory once used.
 /// `Arena` grows by powers of two in size.
-/// When reset `Arena` only keeps the last (and largest) chunk, deallocating the other chunks.
+/// When an `Arena` is reset, only the last (and largest) chunk is kept while the other chunks are deallocated.
 /// The allocator deallocates only when `Arena` is dropped or the allocator is `reset`.
 ///
 /// Safety: `Arena` can only be dropped or reset when nothing is allocated on the Arena.
