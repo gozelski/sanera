@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 use core::{
     alloc::{AllocError, Allocator, Layout},
     cell::Cell,
