@@ -1,7 +1,8 @@
 [package]
 name = "sanera"
-version = "0.1.0"
+version = "0.0.0"
 edition = "2024"
+rust-version = "1.100.0"
 description = "Arena Allocators in Rust"
 license = "MIT"
 respository = "https://github.com/gozelski/sanera"
