@@ -98,6 +98,8 @@ impl<A: Allocator> Arena<A> {
         }
     }
 
+    /// Reset the `Arena`'s state.
+    /// This will also deallocate all but the current (and largest) chunk.
     pub fn reset(&mut self) {
         let Some(head) = self.head.get() else {
             return;
@@ -202,6 +204,7 @@ impl<A: Allocator> Drop for Arena<A> {
 }
 
 /// Internal type. This is not to be used as API.
+/// A header representing a chunk of memory, tracked by its layout and previous chunk.
 #[repr(C)]
 struct ChunkHeader {
     prev: Option<NonNull<ChunkHeader>>,

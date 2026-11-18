@@ -8,7 +8,7 @@ license = "MIT"
 respository = "https://github.com/gozelski/sanera"
 readme = "README.md"
 keywords = ["arena", "allocator", "library"]
-categories = ["development-tools"]
+categories = ["development-tools", "data-structures"]
 
 [features]
 default = ["std"]

@@ -11,6 +11,9 @@ fn main() {
             let val2 = Box::new_in(4, &arena);
             let val3 = Box::new_in(8, &arena);
             println!("vals: {} {} {}", val1, val2, val3);
+            //The value is never Dropped, but it will be deallocated when `arena` is dropped.
+            // `_raw_val1` is bound to not outlive the lifetime of arena.
+            let _raw_val1 = Box::leak(val1);
         }
         //The arena only actually "deallocates" the boxes here. (We technically do deallocate val3 early)
         arena.reset();
